@@ -26,7 +26,7 @@
                 <td>'.$row['item_name'].'</td>
 
                 <td>
-                    <button onclick="GetItemDetails('.$row['id'].')" class="btn btn-warning">編輯</button>
+                    
                     <button onclick="DeleteItem('.$row['id'].')" class="btn btn-danger">刪除</button>
                 </td>
                 

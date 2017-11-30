@@ -44,37 +44,7 @@ function DeleteItem(id) {
     }
 }
 
-function GetItemDetails(id) {
-    $("#hidden_item_id").val(id);
-    $.post("ajax/readItemDetails.php", {
-            id: id
-        },
-        function (data, status) {
-            var user = JSON.parse(data);
-            $("#update_item_type").val(worship.item_type);
-            $("#update_item_name").val(worship.item_name);
-        }
-    );
-    $("#update_item_modal").modal("show");
-}
 
-
-function UpdateItemDetails() {
-    var item_type = $("#update_item_type").val();
-    var item_name = $("#update_item_name").val(); 
-    var id = $("#hidden_item_id").val();
- 
-    $.post("ajax/updateItemDetails.php", {
-            id: id,
-            item_type: item_type,
-            item_name: item_name,
-        },
-        function (data, status) {
-            $("#update_item_modal").modal("hide");
-            readlist();
-        }
-    );
-}
 
 
 $(document).ready(function () {

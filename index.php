@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" placeholder="搜尋看看" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜尋</button>
                 </form>
                 <div class="pull-right">
@@ -52,7 +52,7 @@
                         
                     <div class="form-group">
                         <label for="item_name">歌名</label>
-                        <input type="text" id="item_name" placeholder="item_name" class="form-control" />
+                        <input type="text" id="item_name" placeholder="在這兒輸入歌名" class="form-control" />
                     </div>
                 </div>
                     <div class="modal-footer">
@@ -63,34 +63,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="update_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">更新/修改資料</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body">
         
-                        <div class="form-group">
-                            <label for="update_item_type">快/慢</label>
-                            <input type="text" id="update_item_type" placeholder="item type" class="form-control"/>
-                        </div>
-        
-                        <div class="form-group">
-                            <label for="update_item_name">歌名</label>
-                            <input type="text" id="update_item_name" placeholder="item Name" class="form-control"/>
-                        </div>
-        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" onclick="UpdateItemDetails()" >儲存</button>
-                        <input type="hidden" id="hidden_user_id">
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </main><!-- /.container -->
 
