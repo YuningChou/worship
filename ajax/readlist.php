@@ -6,10 +6,9 @@
     $data = '<table class="table table-bordered table-striped">
                         <tr>
                             <th>No.</th>
-                            <th>type</th>
-                            <th>Name</th>
-                            <th>Update</th>
-                            <th>Delete</th>
+                            <th>快/慢</th>
+                            <th>歌名</th>
+                            <th>操作</th>
                         </tr>';
  
     $query = "SELECT * FROM worship";
@@ -30,11 +29,10 @@
                 <td>'.$row['item_name'].'</td>
 
                 <td>
-                    <button onclick="GetItemDetails('.$row['id'].')" class="btn btn-warning">Update</button>
+                    <button onclick="GetItemDetails('.$row['id'].')" class="btn btn-warning">編輯</button>
+                    <button onclick="DeleteItem('.$row['id'].')" class="btn btn-danger">刪除</button>
                 </td>
-                <td>
-                    <button onclick="DeleteItem('.$row['id'].')" class="btn btn-danger">Delete</button>
-                </td>
+                
             </tr>';
             $number++;
         }
@@ -42,7 +40,7 @@
     else
     {
         // records now found 
-        $data .= '<tr><td colspan="6">Records not found!</td></tr>';
+        $data .= '<tr><td colspan="4">目前沒資料! 快新增一個吧!</td></tr>';
     }
  
     $data .= '</table>';

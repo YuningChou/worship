@@ -1,28 +1,28 @@
 function additem() {
-    // get values
+    // 拿到輸入的值
     var item_type = $('input[name=item_type]:checked').val();
     var item_name = $("#item_name").val();
  
-    // Add record
+    // 增加
     $.post("ajax/additem.php", {
         item_type: item_type,
         item_name: item_name
 
     }, function (data, status) {
-        // close the popup
+        // 彈出輸入modal
         $("#add_new_item_modal").modal("hide");
  
-        // read records again
+        // 新增後再次讀資料
         readlist();
  
-        // clear fields from the popup
+        // 清空欄位
         $("#item_type").val("");
         $("#item_name").val("");
       
     });
 }
  
-// READ records
+// 讀資料
 function readlist() {
     $.get("ajax/readlist.php", {}, function (data, status) {
         $(".list_content").html(data);
@@ -31,13 +31,13 @@ function readlist() {
 
 
 function DeleteItem(id) {
-    var conf = confirm("Are you sure, do you really want to delete User?");
+    var conf = confirm("你確定? 真的要刪掉它嗎?");
     if (conf == true) {
         $.post("ajax/deleteitem.php", {
                 id: id
             },
             function (data, status) {
-                // reload Users by using readRecords();
+                // 刪除後再次讀資料
                 readlist();
             }
         );
@@ -45,42 +45,32 @@ function DeleteItem(id) {
 }
 
 function GetItemDetails(id) {
-    // Add User ID to the hidden field for furture usage
     $("#hidden_item_id").val(id);
     $.post("ajax/readItemDetails.php", {
             id: id
         },
         function (data, status) {
-            // PARSE json data
             var user = JSON.parse(data);
-            // Assing existing values to the modal popup fields
             $("#update_item_type").val(worship.item_type);
             $("#update_item_name").val(worship.item_name);
         }
     );
-    // Open modal popup
     $("#update_item_modal").modal("show");
 }
 
 
 function UpdateItemDetails() {
-    // get values
     var item_type = $("#update_item_type").val();
-    var item_name = $("#update_item_name").val();
- 
-    // get hidden field value
+    var item_name = $("#update_item_name").val(); 
     var id = $("#hidden_item_id").val();
  
-    // Update the details by requesting to the server using ajax
     $.post("ajax/updateItemDetails.php", {
             id: id,
             item_type: item_type,
             item_name: item_name,
         },
         function (data, status) {
-            // hide modal popup
             $("#update_item_modal").modal("hide");
-            // reload Users by using readRecords();
             readlist();
         }
     );
@@ -88,6 +78,5 @@ function UpdateItemDetails() {
 
 
 $(document).ready(function () {
-    // READ recods on page load
-    readlist(); // calling function
+    readlist(); 
 });
