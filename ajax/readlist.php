@@ -1,8 +1,6 @@
 <?php
-    // include Database connection file 
     include("db_connection.php");
- 
-    // Design initial table header 
+
     $data = '<table class="table table-bordered table-striped">
                         <tr>
                             <th>No.</th>
@@ -16,8 +14,7 @@
     if (!$result = mysqli_query($con, $query)) {
         exit(mysqli_error($con));
     }
- 
-    // if query results contains rows then featch those rows 
+
     if(mysqli_num_rows($result) > 0)
     {
         $number = 1;
@@ -39,7 +36,7 @@
     }
     else
     {
-        // records now found 
+
         $data .= '<tr><td colspan="4">目前沒資料! 快新增一個吧!</td></tr>';
     }
  
