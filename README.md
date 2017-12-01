@@ -8,4 +8,4 @@
 * 用data-index做搜尋功能
 
 
-* [連結網址](http://yn-chou.com/worship/index.php)
+* [網址](http://yn-chou.com/worship/index.php)
