@@ -1,8 +1,8 @@
 <?php
 	include("db_connection.php");
 
-	$data = '<table class="table table-bordered table-striped">
-						<tr>
+	$data = '<table class="table table-bordered">
+						<tr class="table-heading">
 							<th>No.</th>
 							<th>快/慢</th>
 							<th>歌名</th>
@@ -20,7 +20,7 @@
     	$number = 1;
     	while($row = mysql_fetch_assoc($result))
     	{
-    		$data .= '<tr>
+    		$data .= '<tr data-index='.$row['item_name'].'>
 				<td>'.$number.'</td>
 				<td>'.$row['item_type'].'</td>
 				<td>'.$row['item_name'].'</td>

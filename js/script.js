@@ -1,6 +1,6 @@
 function additem() {
    
-    var item_type = $("#item_type").val();
+    var item_type = $("input[name='item_type']:checked").val();
     var item_name = $("#item_name").val();
 
     $.post("ajax/additem.php", {
@@ -12,7 +12,7 @@ function additem() {
 
         readlist();
 
-        $("#item_type").val("");
+        $("#item_type").val("input[name='item_type']:checked");
         $("#item_name").val("");
     });
 }
@@ -46,7 +46,7 @@ function GetItemDetails(id) {
         function (data, status) {
       
             var worship = JSON.parse(data);
-            $("#update_item_type").val(worship.item_type);
+            $("input[name='update_item_type']:checked").val(worship.item_type);
             $("#update_item_name").val(worship.item_name);
         }
     );
@@ -56,7 +56,7 @@ function GetItemDetails(id) {
 
 function UpdateItemDetails() {
     
-    var item_type = $("#update_item_type").val();
+    var item_type = $("input[name='update_item_type']:checked").val();
     var item_name = $("#update_item_name").val();
 
     var id = $("#hidden_item_id").val();
@@ -75,4 +75,7 @@ function UpdateItemDetails() {
 
 $(document).ready(function () {  
     readlist(); 
+   
 });
+
+
