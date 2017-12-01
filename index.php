@@ -45,9 +45,9 @@
                 
                     <div class="form-group">
                         <label for="item_type">快/慢</label>
-                        <!--<input type="text" id="item_type" placeholder="item_type" class="form-control" />-->
-                        <label class="radio-inline"><input type="radio" name="item_type" value="快">快</label>
-                        <label class="radio-inline"><input type="radio" name="item_type" value="慢">慢</label>
+                        <input type="text" id="item_type" placeholder="item_type" class="form-control" />
+                        <!--<label class="radio-inline"><input type="radio" name="item_type" value="快">快</label>
+                        <label class="radio-inline"><input type="radio" name="item_type" value="慢">慢</label>-->
                     </div>
                         
                     <div class="form-group">
@@ -63,10 +63,44 @@
             </div>
         </div>
 
+
+
+        <div class="modal fade" id="update_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">更新/修改</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="update_item_type">快/慢</label>
+                            <input type="text" id="update_item_type" placeholder="item type" class="form-control"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="update_item_name">歌名</label>
+                            <input type="text" id="update_item_name" placeholder="item Name" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" onclick="UpdateItemDetails()" >儲存</button>
+                        <input type="hidden" id="hidden_item_id">
+                    </div>
+                </div>
+            </div>
+        </div>
         
 
     </main><!-- /.container -->
-
+    <footer class="text-muted">
+      <div class="container">
+        
+        <p>Yuning Chou</p>
+      </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
