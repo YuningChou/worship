@@ -5,7 +5,7 @@
 * 使用BOOTSTRAP 4 樣式
 * 使用PHP跟MYSQL實現CRUD管理
 
-用data-index做搜尋功能
+* 用data-index做搜尋功能
 
 
 * [連結網址](http://yn-chou.com/worship/index.php)
